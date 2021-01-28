@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bookmarkBtn" type="id" />
+    <item name="bookDetailedImage" type="id" />
+    <item name="detialAppBar" type="id" />
+    <item name="bookDetails" type="id" />
+    <item name="nestedScrollView" type="id" />
+</resources>
