@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="7dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/searchCard"
+        app:cardBackgroundColor="@color/colorPrimary"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/searchImage"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_margin="17dp">
+
+            </ImageView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/searchBookName"
+
+                    android:layout_width="180dp"
+                    android:layout_height="61dp"
+                    android:gravity="center"
+                    android:text="asdasdsa"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toTopOf="@+id/searchRateImg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/searchBookmark"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/yellow"
+                    android:src="@drawable/ic_baseline_bookmark_border_244"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.238"
+                    app:layout_constraintStart_toEndOf="@+id/searchBookName"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.21">
+
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+                <ImageView
+                    android:id="@+id/searchRateImg"
+
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.383"
+                    app:srcCompat="@drawable/ic_baseline_stars_24" />
+
+                <TextView
+                    android:id="@+id/searchRate"
+                    android:layout_width="81dp"
+                    android:layout_height="47dp"
+                    android:layout_marginEnd="52dp"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

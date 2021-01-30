@@ -34,6 +34,7 @@ public class BooksPresenter {
     }
     public void updateBooks(Books books){
         booksDatabase.update(books);
+        Log.d(TAG, "updateBooks: "+booksDatabase.update(books)+ " operation");
     }
     public   void  addBooks(){
         String historyType="History";

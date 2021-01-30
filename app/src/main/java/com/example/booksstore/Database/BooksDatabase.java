@@ -33,7 +33,7 @@ public class BooksDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Books ( bookImgUrl integer ,id integer primary key autoincrement , bookName  text ,  bookAuthor text ,  bookRate integer ,  isFav integer,  type text,bookDetails text)  ");
+        db.execSQL("CREATE TABLE Books ( bookImgUrl integer  , bookName  text ,  bookAuthor text ,  bookRate integer ,  isFav integer,  type text,bookDetails text)  ");
     }
 
     @Override
@@ -55,20 +55,24 @@ public class BooksDatabase extends SQLiteOpenHelper {
         return result!=-1 ;
     }
     public  boolean update (Books books) {
+
         SQLiteDatabase database = getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(bookImgUrl, books.getBookImgUrl());
+        values.put(favourite, books.getFavourite());
+       /* values.put(bookImgUrl, books.getBookImgUrl());
         values.put(bookName, books.getBookName());
         values.put(bookAuthor, books.getBookAuthor());
         values.put(bookRate, books.getBookRate());
-        values.put(favourite, books.getFavourite());
+
         values.put(type,books.getType());
         values.put(description,books.getDescription());
-        String[] args = {String.valueOf(books.getBookImgUrl()), String.valueOf(books.getBookName()),
-                String.valueOf(books.getBookAuthor()), String.valueOf(books.getBookRate()),String.valueOf(books.getFavourite()),String.valueOf(books.getType()),
-                String.valueOf(books.getDescription())};
+        String[] args = {String.valueOf(books.getBookImgUrl()), books.getBookName(),
+                books.getBookAuthor(), String.valueOf(books.getBookRate()),String.valueOf(books.getFavourite()),books.getType(),
+                books.getDescription()};
         long result = database.update(databaseName, values, "bookImgUrl= ?  , bookName=? , bookAuthor=?, bookRate=?," +
-                "isFav=? ,type=?,bookDetails=?", args);
+                "isFav=? ,type=?,bookDetails=?", args);*/
+        String []args={String.valueOf(books.getBookName())};
+        long result= database.update(databaseName,values,"bookName=?",args);
         return result > 0;
     }
     public long getCount(){

@@ -29,6 +29,11 @@ import static android.content.ContentValues.TAG;
 public class BookRecycleViewAdapter extends RecyclerView.Adapter<BookRecycleViewAdapter.BooksHolder> {
     private Context context;
     private ArrayList<Books> popularBooks = new ArrayList<>();
+
+    public BookRecycleViewAdapter(Context context) {
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public BooksHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

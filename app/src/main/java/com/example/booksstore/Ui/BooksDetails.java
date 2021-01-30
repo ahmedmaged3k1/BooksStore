@@ -27,6 +27,7 @@ public class BooksDetails extends AppCompatActivity {
     private TextView bookDescription;
     private ImageView bookImage;
     private FloatingActionButton bookmark_btn;
+    private FloatingActionButton bookmarkBtn;
     private CoordinatorLayout coordinatorLayout;
     private RecyclerView similarBooksAdapter ;
     private ArrayList<Books> similarBooks = new ArrayList<>();
@@ -40,10 +41,12 @@ public class BooksDetails extends AppCompatActivity {
        changeBookmark();
     //   animate();
      //   Log.e(TAG, "onCreate: books.getType()"+similarBooks.get(0).getType());
+
       setSimilarBooksAdapter();
     }
     public void setSimilarBooksAdapter(){
         similarBooksAdapter=findViewById(R.id.similarBooksAdapter);
+        similarBooksSetter();
         similarBooks=similarBooksSetter();
         BookRecycleViewAdapter bookRecycleViewAdapter= new BookRecycleViewAdapter(this,similarBooks);
         // Log.d(TAG, "setPopularBooksAdapter: "+popularBooks.get(2).getBookName());
@@ -85,16 +88,21 @@ public class BooksDetails extends AppCompatActivity {
     }
     private void changeBookmark(){
         bookmark_btn=findViewById(R.id.bookmarkBtn);
+
         bookmark_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: bookmarkChanged");
                 bookmark_btn.setImageResource(R.drawable.bookmarkred);
+                Intent book = getIntent();
+                Bundle bundle = book.getExtras();
+                books = (Books) bundle.getSerializable("Book");
                 books.setFavourite(1);
                 booksPresenter.updateBooks(books);
-
+                Log.d(TAG, "onCreate: "+books.getBookName());
 
             }
         });
+
     }
 }
